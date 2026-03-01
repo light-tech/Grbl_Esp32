@@ -61,7 +61,7 @@
 // of the one in Uart.cpp, which uses the ESP-IDF UART driver.
 // This is for regression testing, and can be removed after
 // testing is complete.
-// #define REVERT_TO_ARDUINO_SERIAL
+#define REVERT_TO_ARDUINO_SERIAL
 
 portMUX_TYPE myMutex = portMUX_INITIALIZER_UNLOCKED;
 
@@ -103,7 +103,7 @@ void client_init() {
 #endif
 
 #ifdef REVERT_TO_ARDUINO_SERIAL
-    Serial.begin(BAUD_RATE, SERIAL_8N1, 3, 1, false);
+    Serial.begin(BAUD_RATE); // , SERIAL_8N1, 3, 1, false);
     client_reset_read_buffer(CLIENT_ALL);
     Serial.write("\r\n");  // create some white space after ESP32 boot info
 #else
