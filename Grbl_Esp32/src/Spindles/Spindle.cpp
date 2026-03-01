@@ -46,7 +46,9 @@ namespace Spindles {
     // This allows the spindle to be dynamicly switched
 
     Null     null;
+#if ENABLE_PWM_SPINDLE
     PWM      pwm;
+#endif
 #if ENABLE_RELAY_SPINDLE
     Relay    relay;
 #endif
@@ -77,9 +79,11 @@ namespace Spindles {
 
     void Spindle::select() {
         switch (static_cast<SpindleType>(spindle_type->get())) {
+#if ENABLE_PWM_SPINDLE
             case SpindleType::PWM:
                 spindle = &pwm;
                 break;
+#endif
 #if ENABLE_RELAY_SPINDLE
             case SpindleType::RELAY:
                 spindle = &relay;

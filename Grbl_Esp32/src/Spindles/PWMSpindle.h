@@ -21,6 +21,9 @@
 	along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+#if ENABLE_PWM_SPINDLE
+
 #include "Spindle.h"
 
 namespace Spindles {
@@ -71,3 +74,5 @@ namespace Spindles {
         uint8_t      calc_pwm_precision(uint32_t freq);
     };
 }
+
+#endif

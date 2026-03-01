@@ -19,6 +19,9 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+#if ENABLE_PWM_SPINDLE
+
 #include "PWMSpindle.h"
 #include "soc/ledc_struct.h"
 
@@ -297,3 +300,5 @@ namespace Spindles {
 #endif
     }
 }
+
+#endif
