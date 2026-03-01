@@ -1,3 +1,5 @@
+#if ENABLE_HUANYANG_SPINDLE
+
 #include "HuanyangSpindle.h"
 
 /*
@@ -385,3 +387,5 @@ namespace Spindles {
         };
     }
 }
+
+#endif

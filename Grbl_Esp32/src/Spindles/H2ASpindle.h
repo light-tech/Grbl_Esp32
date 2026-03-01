@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_H2A_SPINDLE
+
 #include "VFDSpindle.h"
 
 /*
@@ -39,3 +41,5 @@ namespace Spindles {
         H2A();
     };
 }
+
+#endif

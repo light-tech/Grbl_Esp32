@@ -1,3 +1,5 @@
+#if ENABLE_YL620_SPINDLE
+
 #include "YL620Spindle.h"
 
 /*
@@ -230,3 +232,5 @@ namespace Spindles {
         return [](const uint8_t* response, Spindles::VFD* vfd) -> bool { return true; };
     }
 }
+
+#endif

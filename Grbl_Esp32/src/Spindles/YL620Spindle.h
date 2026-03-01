@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_YL620_SPINDLE
+
 #include "VFDSpindle.h"
 
 /*
@@ -42,3 +44,5 @@ namespace Spindles {
         YL620();
     };
 }
+
+#endif

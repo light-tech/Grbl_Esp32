@@ -19,6 +19,8 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+#if ENABLE_RELAY_SPINDLE
+
 #include "RelaySpindle.h"
 
 // ========================= Relay ==================================
@@ -72,3 +74,5 @@ namespace Spindles {
         digitalWrite(_output_pin, duty > 0);  // anything greater
     }
 }
+
+#endif

@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_HUANYANG_SPINDLE
+
 #include "VFDSpindle.h"
 
 /*
@@ -48,3 +50,5 @@ namespace Spindles {
         Huanyang();
     };
 }
+
+#endif

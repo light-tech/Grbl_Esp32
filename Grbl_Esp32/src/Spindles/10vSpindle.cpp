@@ -24,6 +24,9 @@
     You should have received a copy of the GNU General Public License
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+#if ENABLE_10V_SPINDLE
+
 #include "10vSpindle.h"
 
 namespace Spindles {
@@ -193,3 +196,5 @@ namespace Spindles {
 #endif
     }
 }
+
+#endif

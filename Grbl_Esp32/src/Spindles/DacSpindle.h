@@ -24,6 +24,8 @@
 
 */
 
+#if ENABLE_DAC_SPINDLE
+
 #include "PWMSpindle.h"
 
 namespace Spindles {
@@ -49,3 +51,5 @@ namespace Spindles {
         void set_output(uint32_t duty);  // sets DAC instead of PWM
     };
 }
+
+#endif

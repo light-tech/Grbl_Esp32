@@ -21,6 +21,9 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+#if ENABLE_DAC_SPINDLE
+
 #include "DacSpindle.h"
 
 namespace Spindles {
@@ -106,3 +109,5 @@ namespace Spindles {
         }
     }
 }
+
+#endif

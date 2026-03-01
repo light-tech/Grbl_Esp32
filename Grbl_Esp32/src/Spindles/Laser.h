@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_LASER_SPINDLE
+
 /*
 	Laser.h
 
@@ -42,3 +44,5 @@ namespace Spindles {
         virtual ~Laser() {}
     };
 }
+
+#endif

@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_RELAY_SPINDLE
+
 /*
 	RelaySpindle.h
 
@@ -44,3 +46,5 @@ namespace Spindles {
         void set_output(uint32_t duty);
     };
 }
+
+#endif

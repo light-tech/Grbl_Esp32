@@ -1,3 +1,5 @@
+#if ENABLE_H2A_SPINDLE
+
 #include "H2ASpindle.h"
 
 /*
@@ -143,3 +145,5 @@ namespace Spindles {
         return [](const uint8_t* response, Spindles::VFD* vfd) -> bool { return true; };
     }
 }
+
+#endif

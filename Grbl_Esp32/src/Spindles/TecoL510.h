@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_TECOL510_SPINDLE
+
 #include "VFDSpindle.h"
 
 /*
@@ -46,3 +48,5 @@ namespace Spindles {
         uint16_t _max_freq;
     };
 }
+
+#endif

@@ -26,6 +26,8 @@
 	along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#if ENABLE_10V_SPINDLE
+
 #include "PWMSpindle.h"
 
 namespace Spindles {
@@ -57,3 +59,5 @@ namespace Spindles {
         void set_dir_pin(bool Clockwise) override;
     };
 }
+
+#endif

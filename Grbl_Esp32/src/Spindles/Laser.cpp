@@ -19,6 +19,8 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+#if ENABLE_LASER_SPINDLE
+
 #include "Laser.h"
 
 // ===================================== Laser ==============================================
@@ -99,3 +101,5 @@ namespace Spindles {
 #endif
     }
 }
+
+#endif

@@ -1,3 +1,5 @@
+#if ENABLE_TECOL510_SPINDLE
+
 #include "TecoL510.h"
 
 /*
@@ -208,3 +210,5 @@ namespace Spindles {
         };
     }
 }
+
+#endif

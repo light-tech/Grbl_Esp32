@@ -30,6 +30,8 @@
     BESC_MAX_PULSE_SECS is typically 2ms (0.002 sec) or more
 
 */
+#if ENABLE_BESC_SPINDLE
+
 #include "BESCSpindle.h"
 
 // don't change these
@@ -121,3 +123,5 @@ namespace Spindles {
         return rpm;
     }
 }
+
+#endif

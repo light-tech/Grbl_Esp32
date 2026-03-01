@@ -33,6 +33,8 @@
 
 */
 
+#if ENABLE_BESC_SPINDLE
+
 #include "PWMSpindle.h"
 
 namespace Spindles {
@@ -52,3 +54,5 @@ namespace Spindles {
         virtual ~BESC() {}
     };
 }
+
+#endif

@@ -47,48 +47,84 @@ namespace Spindles {
 
     Null     null;
     PWM      pwm;
+#if ENABLE_RELAY_SPINDLE
     Relay    relay;
+#endif
+#if ENABLE_LASER_SPINDLE
     Laser    laser;
+#endif
+#if ENABLE_DAC_SPINDLE
     Dac      dac;
+#endif
+#if ENABLE_HUANYANG_SPINDLE
     Huanyang huanyang;
+#endif
+#if ENABLE_H2A_SPINDLE
     H2A      h2a;
+#endif
+#if ENABLE_BESC_SPINDLE
     BESC     besc;
+#endif
+#if ENABLE_10V_SPINDLE
     _10v     _10v;
+#endif
+#if ENABLE_YL620_SPINDLE
     YL620    yl620;
+#endif
+#if ENABLE_TECOL510_SPINDLE
     L510     l510;
+#endif
 
     void Spindle::select() {
         switch (static_cast<SpindleType>(spindle_type->get())) {
             case SpindleType::PWM:
                 spindle = &pwm;
                 break;
+#if ENABLE_RELAY_SPINDLE
             case SpindleType::RELAY:
                 spindle = &relay;
                 break;
+#endif
+#if ENABLE_LASER_SPINDLE
             case SpindleType::LASER:
                 spindle = &laser;
                 break;
+#endif
+#if ENABLE_DAC_SPINDLE
             case SpindleType::DAC:
                 spindle = &dac;
                 break;
+#endif
+#if ENABLE_HUANYANG_SPINDLE
             case SpindleType::HUANYANG:
                 spindle = &huanyang;
                 break;
+#endif
+#if ENABLE_BESC_SPINDLE
             case SpindleType::BESC:
                 spindle = &besc;
                 break;
+#endif
+#if ENABLE_10V_SPINDLE
             case SpindleType::_10V:
                 spindle = &_10v;
                 break;
+#endif
+#if ENABLE_H2A_SPINDLE
             case SpindleType::H2A:
                 spindle = &h2a;
                 break;
+#endif
+#if ENABLE_YL620_SPINDLE
             case SpindleType::YL620:
                 spindle = &yl620;
                 break;
+#endif
+#if ENABLE_TECOL510_SPINDLE
             case SpindleType::L510:
                 spindle = &l510;
                 break;
+#endif
             case SpindleType::NONE:
             default:
                 spindle = &null;
