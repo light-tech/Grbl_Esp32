@@ -8,7 +8,7 @@
 #include "soc/uart_reg.h"
 #include "soc/io_mux_reg.h"
 #include "soc/gpio_sig_map.h"
-#include "soc/dport_reg.h"
+#include "soc/dport_access.h"
 #include "soc/rtc.h"
 
 Uart::Uart(int uart_num) : _uart_num(uart_port_t(uart_num)), _pushback(-1) {}

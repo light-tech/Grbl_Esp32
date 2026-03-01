@@ -40,6 +40,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+#if USE_I2S_STEPS
+
 #include "Config.h"
 
 // This block of #includes is necessary for Report.h
@@ -63,7 +65,7 @@
 #include "I2SOut.h"
 
 // Always enable I2S streaming logic
-//#define USE_I2S_OUT_STREAM_IMPL
+#define USE_I2S_OUT_STREAM_IMPL
 
 //
 // Configrations for DMA connected I2S
@@ -973,3 +975,5 @@ int IRAM_ATTR i2s_out_init() {
     };
     return i2s_out_init(default_param);
 }
+
+#endif

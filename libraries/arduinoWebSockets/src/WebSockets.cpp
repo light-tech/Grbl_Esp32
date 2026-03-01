@@ -39,7 +39,7 @@ extern "C" {
 #ifdef ESP8266
 #include <Hash.h>
 #elif defined(ESP32)
-#include <hwcrypto/sha.h>
+#include <sha/sha_parallel_engine.h>
 #else
 
 extern "C" {
