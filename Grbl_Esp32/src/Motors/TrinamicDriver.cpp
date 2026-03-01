@@ -17,6 +17,9 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+#if ENABLE_TRINAMIC_MOTOR
+
 #include "TrinamicDriver.h"
 
 #include <TMCStepper.h>
@@ -474,3 +477,5 @@ namespace Motors {
         return false;  // no error
     }
 }
+
+#endif

@@ -22,6 +22,9 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 
 */
+
+#if ENABLE_TRINAMIC_UART_MOTOR
+
 #include "TrinamicUartDriver.h"
 
 #include <TMCStepper.h>
@@ -399,3 +402,5 @@ namespace Motors {
         }
     }
 }
+
+#endif

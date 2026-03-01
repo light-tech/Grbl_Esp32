@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_DYNAMIXEL2_MOTOR
+
 /*
     Dynamixel2.h
 
@@ -125,3 +127,5 @@ namespace Motors {
         bool _has_errors;
     };
 }
+
+#endif

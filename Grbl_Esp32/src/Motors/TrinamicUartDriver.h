@@ -19,6 +19,8 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#if ENABLE_TRINAMIC_UART_MOTOR
+
 #include "Motor.h"
 #include "StandardStepper.h"
 #include "../Uart.h"
@@ -133,3 +135,5 @@ namespace Motors {
     };
 
 }
+
+#endif

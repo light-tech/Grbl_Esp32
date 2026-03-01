@@ -24,6 +24,8 @@
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#if ENABLE_DYNAMIXEL2_MOTOR
+
 #include "Dynamixel2.h"
 
 namespace Motors {
@@ -439,3 +441,5 @@ namespace Motors {
         return crc_accum;
     }
 }
+
+#endif

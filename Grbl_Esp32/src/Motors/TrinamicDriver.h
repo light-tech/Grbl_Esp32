@@ -1,5 +1,7 @@
 #pragma once
 
+#if ENABLE_TRINAMIC_MOTOR
+
 /*
     TrinamicDriver.h
 
@@ -134,3 +136,5 @@ namespace Motors {
         void config_message() override;
     };
 }
+
+#endif

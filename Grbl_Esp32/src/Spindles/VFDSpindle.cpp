@@ -32,6 +32,9 @@
       - Move min/max RPM to protected members.
 
 */
+
+#if ENABLE_VFD_SPINDLE
+
 #include "VFDSpindle.h"
 
 #include <freertos/task.h>
@@ -612,3 +615,5 @@ namespace Spindles {
         return crc;
     }
 }
+
+#endif

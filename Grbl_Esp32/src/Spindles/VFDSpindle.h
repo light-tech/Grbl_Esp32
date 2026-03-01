@@ -18,6 +18,9 @@
     You should have received a copy of the GNU General Public License
     along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+#if ENABLE_VFD_SPINDLE
+
 #include "Spindle.h"
 
 #include "../Uart.h"
@@ -102,3 +105,5 @@ namespace Spindles {
         virtual ~VFD() {}
     };
 }
+
+#endif
