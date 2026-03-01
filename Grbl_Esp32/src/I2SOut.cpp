@@ -51,7 +51,7 @@
 #include "Serial.h"
 #include "Report.h"
 
-#include <FreeRTOS.h>
+#include <freertos/FreeRTOS.h>
 #include <driver/periph_ctrl.h>
 #include <rom/lldesc.h>
 #include <soc/i2s_struct.h>
@@ -63,7 +63,7 @@
 #include "I2SOut.h"
 
 // Always enable I2S streaming logic
-#define USE_I2S_OUT_STREAM_IMPL
+//#define USE_I2S_OUT_STREAM_IMPL
 
 //
 // Configrations for DMA connected I2S
