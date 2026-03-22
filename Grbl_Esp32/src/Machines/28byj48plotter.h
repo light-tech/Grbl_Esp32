@@ -14,18 +14,18 @@
 #endif
 
 #define X_UNIPOLAR
-#define X_PIN_PHASE_0   5    // IN1
-#define X_PIN_PHASE_1   7    // IN3
-#define X_PIN_PHASE_2   6    // IN2
-#define X_PIN_PHASE_3   8    // IN4
+#define X_PIN_PHASE_0   3    // IN1
+#define X_PIN_PHASE_1   4    // IN2
+#define X_PIN_PHASE_2  10    // IN3
+#define X_PIN_PHASE_3   9    // IN4
 
 #define Y_UNIPOLAR
-#define Y_PIN_PHASE_0   9    // IN1
-#define Y_PIN_PHASE_1  20    // IN3
-#define Y_PIN_PHASE_2  10    // IN2
-#define Y_PIN_PHASE_3  21    // IN4
+#define Y_PIN_PHASE_0   7    // IN1
+#define Y_PIN_PHASE_1   8    // IN2
+#define Y_PIN_PHASE_2   6    // IN3
+#define Y_PIN_PHASE_3   5    // IN4
 
-#define Z_SERVO_PIN     4
+#define Z_SERVO_PIN     2    // Not a good pin to use, may need to unplug the servo before power on
 
 #define SPINDLE_TYPE    SpindleType::NONE
 
