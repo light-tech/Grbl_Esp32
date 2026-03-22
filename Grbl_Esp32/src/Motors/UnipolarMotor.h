@@ -23,6 +23,7 @@ namespace Motors {
         bool    _half_step;
         bool    _enabled;
         bool    _dir;
+        uint8_t _phase_max;
 
   protected:
         void config_message() override;
