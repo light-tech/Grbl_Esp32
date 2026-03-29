@@ -10,8 +10,8 @@ const double SERVO_POSITION_MAX_DEFAULT = 20.0;  // mm
 
 const int SERVO_PULSE_FREQ = 50;  // 50Hz ...This is a standard analog servo value. Digital ones can repeat faster
 
-const int SERVO_PULSE_RES_BITS  = 16;     // bits of resolution of PWM (16 is max)
-const int SERVO_PULSE_RES_COUNT = 65535;  // see above  TODO...do the math here 2^SERVO_PULSE_RES_BITS
+const int SERVO_PULSE_RES_BITS  = 14;     // bits of resolution of PWM (16 is max)
+const int SERVO_PULSE_RES_COUNT = (1 << SERVO_PULSE_RES_BITS) - 1;
 
 const double SERVO_TIME_PER_BIT = ((1.0 / (double)SERVO_PULSE_FREQ) / ((double)SERVO_PULSE_RES_COUNT));  // seconds
 
