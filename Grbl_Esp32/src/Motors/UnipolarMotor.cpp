@@ -14,10 +14,12 @@ namespace Motors {
 
     UnipolarMotor::UnipolarMotor(uint8_t axis_index, uint8_t pin_phase0, uint8_t pin_phase1, uint8_t pin_phase2, uint8_t pin_phase3) :
         Motor(axis_index), _pin_phase0(pin_phase0), _pin_phase1(pin_phase1), _pin_phase2(pin_phase2),
-        _pin_phase3(pin_phase3),
-        _half_step(true),  // TODO read from settings ... microstep > 1 = half step
-        _phase_max(_half_step ? 7 : 3)
-    {}
+        _pin_phase3(pin_phase3)
+    {
+        int ms = axis_settings[_axis_index]->microsteps->get();
+        _half_step = (ms > 1);
+        _phase_max = (_half_step ? 7 : 3);
+    }
 
     void UnipolarMotor::init() {
         pinMode(_pin_phase0, OUTPUT);
