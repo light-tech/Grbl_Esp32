@@ -69,14 +69,11 @@ namespace Motors {
     void RcServo::_write_pwm(uint32_t duty) {
         // to prevent excessive calls to ledcWrite, make sure duty has changed
         if (duty == _current_pwm_duty) {
-            log_e("_write_pwm: No change in duty");
+            log_d("_write_pwm: No change in duty");
             return;
         }
 
-        // grbl_msg_sendf(CLIENT_SERIAL,
-        //               MsgLevel::Info,
-        log_e(
-                       "%s RC Servo at %d => %d in (%.0f,%.0f) %s",
+        log_d("_write_pwm: %s RC Servo at %d => %d in (%.0f,%.0f) %s",
                        reportAxisNameMsg(_axis_index, _dual_axis_index),
                        _current_pwm_duty,
                        duty,
@@ -90,9 +87,7 @@ namespace Motors {
 
     // sets the PWM to zero. This allows most servos to be manually moved
     void RcServo::set_disable(bool disable) {
-        grbl_msg_sendf(CLIENT_SERIAL,
-                MsgLevel::Info,
-                "%s RC Servo is now %s",
+        log_d("%s RC Servo is now %s",
                 reportAxisNameMsg(_axis_index, _dual_axis_index),
                 disable ? " disabled" : " enabled");
         _disabled = disable;
@@ -118,9 +113,7 @@ namespace Motors {
         float    servo_pos, mpos, offset;
 
         if (_disabled) {
-            grbl_msg_sendf(CLIENT_SERIAL,
-                MsgLevel::Info,
-                "%s RC Servo can't set_location because is currently disabled",
+            log_d("%s RC Servo can't set_location because is currently disabled",
                 reportAxisNameMsg(_axis_index, _dual_axis_index));
             return;
         }
@@ -138,12 +131,10 @@ namespace Motors {
         servo_pulse_len = (uint32_t)mapConstrain(
             servo_pos, min_pos, max_pos, _pwm_pulse_min, _pwm_pulse_max);
 
-        // grbl_msg_sendf(CLIENT_SERIAL,
-        //    MsgLevel::Info,
-        log_e(
-            "%s RC Servo set_location: mpos %f in (%f, %f) => %d in (%f, %f)",
+        log_d("%s RC Servo set_location: mpos %f in (%f, %f) => %d in (%f, %f)",
             reportAxisNameMsg(_axis_index, _dual_axis_index),
-            mpos, min_pos, max_pos, servo_pulse_len, _pwm_pulse_min, _pwm_pulse_max
+            mpos, min_pos, max_pos,
+            servo_pulse_len, _pwm_pulse_min, _pwm_pulse_max
         );
 
         _write_pwm(servo_pulse_len);

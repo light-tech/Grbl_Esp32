@@ -66,11 +66,9 @@ namespace Motors {
             _current_phase = (_current_phase - 1) & _phase_max;
         }
 
-        /* grbl_msg_sendf(CLIENT_SERIAL,
-                MsgLevel::Info,
-                "%s Phase %d",
+        log_d("%s Phase %d",
                 reportAxisNameMsg(_axis_index, _dual_axis_index),
-                _current_phase); */
+                _current_phase);
 
         /*
 			8 Step : A – AB – B – BC – C – CD – D – DA
@@ -91,6 +89,8 @@ namespace Motors {
         } else {
             output = phaseOutputs[(_current_phase << 1) | 1]; // 2 * _current_phase + 1
         }
+
+        // Output in phase i is just the i-th bit.
         digitalWrite(_pin_phase0, (output & 0b0001)     );
         digitalWrite(_pin_phase1, (output & 0b0010) >> 1);
         digitalWrite(_pin_phase2, (output & 0b0100) >> 2);
